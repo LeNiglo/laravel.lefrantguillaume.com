@@ -1,0 +1,131 @@
+2014/09/29 17:48:43 [error] 18940#0: *20 client intended to send too large body: 1646129 bytes, client: 127.0.0.1, server: lefrantguillaume.dev, request: "POST /pma/import.php HTTP/1.1", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/pma/index.php?token=c0be5b5c9b6057e45d7cc26cedbf7cac"
+2014/09/29 18:11:16 [error] 19393#0: *163 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to undefined method Illuminate\Encryption\Encrypter::crypt() in /home/leniglo/html/lefrantguillaume.dev/bootstrap/compiled.php on line 3232" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /login HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/login"
+2014/09/30 08:23:11 [error] 1081#0: *45 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /home/leniglo/html/lefrantguillaume.dev/app/storage/views/eaf4b1486ff57682c37ff72db8571cb0 on line 14" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /contact?to=2&orig=1 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/check_out"
+2014/09/30 10:35:37 [crit] 2863#0: *18 stat() "/usr/share/nginx/html/lefrantguillaume.dev/public/" failed (13: Permission denied), client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET / HTTP/1.1", host: "lefrantguillaume.dev"
+2014/09/30 10:35:37 [crit] 2863#0: *18 stat() "/usr/share/nginx/html/lefrantguillaume.dev/public/" failed (13: Permission denied), client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET / HTTP/1.1", host: "lefrantguillaume.dev"
+2014/09/30 10:35:37 [error] 2863#0: *18 FastCGI sent in stderr: "PHP message: PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+PHP message: PHP Fatal error:  Unknown: Failed opening required '/usr/share/nginx/html/lefrantguillaume.dev/public/index.php' (include_path='.:/usr/share/php:/usr/share/pear') in Unknown on line 0" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev"
+2014/09/30 10:35:47 [crit] 2863#0: *18 stat() "/usr/share/nginx/html/lefrantguillaume.dev/public/" failed (13: Permission denied), client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET / HTTP/1.1", host: "lefrantguillaume.dev"
+2014/09/30 10:35:47 [crit] 2863#0: *18 stat() "/usr/share/nginx/html/lefrantguillaume.dev/public/" failed (13: Permission denied), client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET / HTTP/1.1", host: "lefrantguillaume.dev"
+2014/09/30 10:35:47 [error] 2863#0: *18 FastCGI sent in stderr: "Unable to open primary script: /usr/share/nginx/html/lefrantguillaume.dev/public/index.php (No such file or directory)" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev"
+2014/09/30 10:35:47 [crit] 2863#0: *18 stat() "/usr/share/nginx/html/lefrantguillaume.dev/public/favicon.ico" failed (13: Permission denied), client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /favicon.ico HTTP/1.1", host: "lefrantguillaume.dev"
+2014/09/30 10:35:47 [crit] 2863#0: *18 stat() "/usr/share/nginx/html/lefrantguillaume.dev/public/favicon.ico" failed (13: Permission denied), client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /favicon.ico HTTP/1.1", host: "lefrantguillaume.dev"
+2014/09/30 10:35:47 [error] 2863#0: *18 FastCGI sent in stderr: "Unable to open primary script: /usr/share/nginx/html/lefrantguillaume.dev/public/index.php (No such file or directory)" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev"
+2014/12/12 12:41:08 [error] 1226#0: *1 FastCGI sent in stderr: "PHP message: PHP Notice:  Use of undefined constant test - assumed 'test' in /home/leniglo/html/lefrantguillaume.dev/public/test.php on line 3" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev"
+2014/12/12 12:41:51 [error] 1226#0: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/leniglo/html/lefrantguillaume.dev/public/test.php on line 3
+PHP message: PHP Warning:  file_get_contents(http://http://community.silkke.dev/booking/getMonth): failed to open stream: php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/leniglo/html/lefrantguillaume.dev/public/test.php on line 3" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev"
+2014/12/12 12:42:57 [error] 1226#0: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  Invalid argument supplied for foreach() in /home/leniglo/html/lefrantguillaume.dev/public/test.php on line 5" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev"
+2014/12/12 12:43:11 [error] 1226#0: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  Invalid argument supplied for foreach() in /home/leniglo/html/lefrantguillaume.dev/public/test.php on line 6" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev"
+2014/12/12 12:49:12 [error] 1226#0: *16 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/leniglo/html/lefrantguillaume.dev/public/test.php on line 19" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev"
+2014/12/12 12:49:14 [error] 1226#0: *16 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/leniglo/html/lefrantguillaume.dev/public/test.php on line 19" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev"
+2014/12/12 12:49:14 [error] 1226#0: *16 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/leniglo/html/lefrantguillaume.dev/public/test.php on line 19" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test.php HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev"
+2014/12/12 14:31:53 [error] 1226#0: *55 FastCGI sent in stderr: "PHP message: PHP Warning:  file_get_contents(http://community.silkke.dev/booking/getDay?year=2014&amp;month=12&amp;day=19&amp;capsule=7): failed to open stream: HTTP request failed! HTTP/1.1 500 Internal Server Error
+ in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 32" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=19 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php"
+2014/12/12 14:32:15 [error] 1226#0: *55 FastCGI sent in stderr: "PHP message: PHP Warning:  file_get_contents(http://community.silkke.dev/booking/getDay?year=2014&amp;month=12&amp;day=19&amp;capsule=7): failed to open stream: HTTP request failed! HTTP/1.1 500 Internal Server Error
+ in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 32" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=19 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php"
+2014/12/12 16:15:57 [error] 1227#0: *219 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '$item' (T_VARIABLE), expecting ',' or ';' in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 44" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=19 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php?month=lel"
+2014/12/12 16:16:04 [error] 1227#0: *219 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '$item' (T_VARIABLE), expecting ',' or ';' in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 44" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=19 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php?month=lel"
+2014/12/12 16:16:05 [error] 1227#0: *219 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '$item' (T_VARIABLE), expecting ',' or ';' in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 44" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=19 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php?month=lel"
+2014/12/12 16:16:15 [error] 1227#0: *219 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '$item' (T_VARIABLE), expecting ',' or ';' in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 44" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=19 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php?month=lel"
+2014/12/12 16:17:16 [error] 1227#0: *219 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '$item' (T_VARIABLE), expecting ',' or ';' in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 44" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=19 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php?month=lel"
+2014/12/12 16:17:35 [error] 1227#0: *219 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '$item' (T_VARIABLE), expecting ',' or ';' in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 44" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=19 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php?month=lel"
+2014/12/12 16:18:10 [error] 1227#0: *219 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '$item' (T_VARIABLE), expecting ',' or ';' in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 44" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=19 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php?month=lel"
+2014/12/12 17:37:13 [error] 1228#0: *546 FastCGI sent in stderr: "PHP message: PHP Warning:  file_get_contents(http://community.silkke.dev/booking/getDay?year=2014&amp;month=12&amp;day=14&amp;capsule=7): failed to open stream: HTTP request failed! HTTP/1.1 500 Internal Server Error
+ in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 43
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 48" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=14 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php?month=0"
+2014/12/12 17:37:21 [error] 1228#0: *546 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/len
+2014/12/12 17:37:21 [error] 1228#0: *546 FastCGI sent in stderr: "age: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/htm
+2014/12/12 17:37:21 [error] 1228#0: *546 FastCGI sent in stderr: "  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=14 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php?month=0"
+2014/12/12 17:38:34 [error] 1228#0: *553 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/len
+2014/12/12 17:38:34 [error] 1228#0: *553 FastCGI sent in stderr: "age: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/htm
+2014/12/12 17:38:34 [error] 1228#0: *553 FastCGI sent in stderr: "  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: heure in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56
+PHP message: PHP Notice:  Undefined index: duree in /home/leniglo/html/lefrantguillaume.dev/public/test2.php on line 56" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /test2.php?year=2014&month=12&day=14 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev", referrer: "http://lefrantguillaume.dev/test.php?month=0"
+2015/01/29 17:41:52 [error] 1167#0: *1047 "/usr/share/nginx/html/lefrantguillaume.dev/public/index.php" is forbidden (13: Permission denied), client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET / HTTP/1.1", host: "lefrantguillaume.dev"
+2015/01/29 17:41:53 [crit] 1167#0: *1047 stat() "/usr/share/nginx/html/lefrantguillaume.dev/public/favicon.ico" failed (13: Permission denied), client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /favicon.ico HTTP/1.1", host: "lefrantguillaume.dev"
+2015/01/29 17:41:53 [crit] 1167#0: *1047 stat() "/usr/share/nginx/html/lefrantguillaume.dev/public/favicon.ico" failed (13: Permission denied), client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /favicon.ico HTTP/1.1", host: "lefrantguillaume.dev"
+2015/01/29 17:41:53 [error] 1167#0: *1047 FastCGI sent in stderr: "Unable to open primary script: /usr/share/nginx/html/lefrantguillaume.dev/public/index.php (No such file or directory)" while reading response header from upstream, client: 127.0.0.1, server: lefrantguillaume.dev, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "lefrantguillaume.dev"

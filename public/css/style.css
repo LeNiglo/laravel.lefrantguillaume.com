@@ -1,0 +1,196 @@
+body {
+	background-color: rgba(66, 139, 202, 0.05);
+}
+
+#header {
+	padding-top: 20px;
+	font-size: 18px;
+}
+
+#header a {
+	color: #428bca;
+	margin: 0 20px;
+	display: inline-block;
+	border-bottom: 1px solid #428bca;
+}
+
+#header a:hover,
+#header a:focus,
+#header a:active {
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 1px solid #333;
+}
+
+#header .dropdown-menu li a {
+	border: none;
+}
+
+#header .dropdown-menu li a:hover {
+	border: none;
+	background: none;
+}
+
+#page {
+	margin: 30px auto;
+}
+
+td div.progress {
+	margin: 10px;
+}
+
+#footer {
+	padding: 10px;
+	margin: auto;
+	background-color: rgba(206, 216, 195, 0.2);
+	border-top: 1px solid #428bca;
+	border-radius-bottom: 10px;
+}
+
+#thumbSuccess,
+#thumbError {
+	position: absolute;
+	top: 200px;
+	left: 35%;
+	width: 30%;
+	margin: auto;
+}
+
+.check-header {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #aaa;
+	font-size: 36px;
+}
+
+.formComplete * {
+	color: #3c763d;
+	border-color: #3c763d;
+}
+
+img.blue2green
+{
+	filter: hue-rotate(260deg);
+	-webkit-filter: hue-rotate(260deg);
+	-moz-filter: hue-rotate(260deg);
+	-o-filter: hue-rotate(260deg);
+	-ms-filter: hue-rotate(260deg);
+}
+
+img.blue2green:hover
+{
+	filter: hue-rotate(170deg);
+	-webkit-filter: hue-rotate(170deg);
+	-moz-filter: hue-rotate(170deg);
+	-o-filter: hue-rotate(170deg);
+	-ms-filter: hue-rotate(170deg);
+}
+
+@font-face {
+	font-family: LoLFont;
+	src: url('/css/lolfont.woff');
+}
+
+/*
+**	Star Rating plugin
+*/
+
+.rating {
+    overflow: hidden;
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+}
+
+.rating label:first-child {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.42857143;
+}
+
+.rating-input {
+    float: right;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0 0 0 -16px;
+    opacity: 0;
+}
+
+.rating:hover .rating-star:hover,
+.rating:hover .rating-star:hover ~ .rating-star,
+.rating-input:checked ~ .rating-star {
+    background-position: 0 0;
+}
+
+.rating-star,
+.rating:hover .rating-star {
+    position: relative;
+    float: right;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('/img/icons/star.png') 0 -16px;
+}
+
+/* Just for the demo */
+body {
+    margin: 20px;
+}
+
+
+/*
+**	Extends Bootstrap
+*/
+
+
+/* Horinzontal popover */
+.popover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1010;
+	display: none;
+	max-width: 600px;
+	padding: 1px;
+	text-align: left;
+	white-space: normal;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+/* responsive border img */
+.bording img {
+	margin: 48% 0;
+	padding: 48% 0;
+}
+@media (min-width: 768px) {
+  .bording img {
+  	margin: 35% 0;
+	padding: 35% 0;
+  }
+}
+@media (min-width: 992px) {
+  .bording img {
+  	margin: 8% 0;
+	padding: 8% 0;
+  }
+}
+@media (min-width: 1200px) {
+  .bording img {
+  	margin: 5% 0;
+	padding: 5% 0;
+  }
+}
