@@ -1,10 +1,11 @@
 @extends('layouts.main')
 
 @section('page')
-<div id="page" class="container clearfix">	
+<div id="page" class="container clearfix">
 	<div class="container">
-		<p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+		<p class="lead">Here is a short list of projects I realized.</p>
+		<p>These projects could have been realized for the school, for the job or just for personnal use !<br />
+		Thank's for taking attention.</p>
 	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">Zappy</div>
