@@ -60,7 +60,7 @@
 		</div>
 	</div>
 	<div class="row text-center">
-		<iframe width="1280" height="720" src="https://www.youtube.com/embed/lAIGb1lfpBw?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+		<iframe width="1280" height="720" src="https://www.youtube.com/embed/lAIGb1lfpBw?iv_load_policy=3&amp;loop=1&amp;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 </div>
 @stop
