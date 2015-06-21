@@ -7,7 +7,7 @@
 		<img class="img-responsive" src="/img/animes.png" alt="animes" />
 		<img class="img-responsive" src="/img/lordi.png" alt="Lordi - The Arockalypse" />
 	</div>
-	<div class="container col-xs-6 text-justify img-center">
+	<div class="col-xs-6 text-justify img-center">
 		<p class="lead text-center">Who am I ?</p>
 		<p>
 			&nbsp;&nbsp;&nbsp;&nbsp;<big>I</big>'m a third year student at EPITECH Bordeaux in France.<br />
@@ -43,7 +43,8 @@
 		<img class="img-responsive" src="/img/lareunion.png" alt="reunion island" />
 		<img class="img-responsive" src="/img/epitech.png" alt="Epitech School" />
 	</div>
-	<div class="row container col-md-8 col-md-offset-2 col-xs-12">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 col-xs-12">
 		<p class ="lead text-center">Still reading ?</p>
 		<p>
 			&nbsp;&nbsp;&nbsp;&nbsp;<big>A</big>fter that, if you are interested into my IT Skills, you can check my Curricula Vitae right bellow :
@@ -56,6 +57,10 @@
 		<p>
 			&nbsp;&nbsp;&nbsp;&nbsp;<big>I</big>f you are interested in anything else, or if you just want to contact me, or report me an error, you can contact me <a href="{{{ URL::to('contact') }}}">here</a>.
 		</p>
+		</div>
+	</div>
+	<div class="row text-center">
+		<iframe width="1280" height="720" src="https://www.youtube.com/embed/lAIGb1lfpBw?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 </div>
 @stop
