@@ -194,3 +194,8 @@ body {
 	padding: 5% 0;
   }
 }
+
+@font-face {
+    font-family: Lato;
+    src: url(../fonts/lato.woff);
+}

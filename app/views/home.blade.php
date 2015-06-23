@@ -2,7 +2,6 @@
 <head>
 	<title>Lefrant Guillaume</title>
 
-	<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/style.css">
 
@@ -21,7 +20,7 @@
 			color: #eee;
 			display: table;
 			font-weight: 100;
-			font-family: 'Lato';
+			font-family: Lato, Helvetica, Verdana, Arial, sans-serif;
 		}
 
 		.container {

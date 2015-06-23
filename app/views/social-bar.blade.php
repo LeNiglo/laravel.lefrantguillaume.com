@@ -11,7 +11,7 @@
     </div>
     <div class="col-xs-2">
         <a href="https://plus.google.com/100002145336408344378/posts" target="_blank">
-            <img height="{{{ $height }}}" src="/img/icons/google+.png" alt="google+" />
+            <img height="{{{ $height }}}" src="/img/icons/google.png" alt="google+" />
         </a>
     </div>
     <div class="col-xs-2">
@@ -21,7 +21,7 @@
     </div>
     <div class="col-xs-2">
         <a href="http://www.codecademy.com/LeNiglo" target="_blank">
-            <img height="{{{ $height }}}" src="/img/icons/codecademy.png" alt="codecademy" />
+            <img height="{{{ $height }}}" src="/img/icons/code_academy.png" alt="codecademy" />
         </a>
     </div>
     <div class="col-xs-2">
