@@ -5,6 +5,8 @@
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/style.css">
 
+	<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+
 	<style>
 		body {
 			background-color: #eee;
@@ -20,7 +22,7 @@
 			color: #eee;
 			display: table;
 			font-weight: 100;
-			font-family: Lato, Helvetica, Verdana, Arial, sans-serif;
+			font-family: 'Lato', Helvetica, Verdana, Arial, sans-serif;
 		}
 
 		.container {

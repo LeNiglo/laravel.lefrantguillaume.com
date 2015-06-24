@@ -25,14 +25,7 @@
 						<li><a href="{{{ URL::to('cv') }}}">Interactiv CV</a></li>
 					</ul>
 				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Projects <span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu" style="background: none; box-shadow: none; border: none;">
-						<li><a href="{{{ URL::to('projects') }}}">School</a></li>
-						<li><a href="{{{ URL::to('projects') }}}">Personnal</a></li>
-						<li><a href="{{{ URL::to('projects') }}}">Work</a></li>
-					</ul>
-				</li>
+				<li><a href="{{{ URL::to('projects') }}}">Projects</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Contact <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu" style="background: none; box-shadow: none; border: none;">
