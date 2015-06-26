@@ -68,18 +68,18 @@
 	<script type="text/javascript">
 	refreshGB();
 	</script>
-	<div class="row text-center">
+	<div class="row text-center" style="padding: 20px;">
 	<small>{{{ DB::table('golden_book')->count() }}} record(s).</small>
 	</div>
-	<div class="row text-center">
-		<div class="col-md-6">
+	<div class="row text-center" style="display: table;">
+		<div class="col-md-6" style="display:table-cell;vertical-align:middle;float:none;">
 			<a href="https://www.talentoday.com/users/guillaume-lefrant/personality" target="_blank" title="talentoday.com">
-				<img src="http://puu.sh/iDduc.png" alt="personnality" />
+				<img class="img-responsive" src="http://puu.sh/iDduc.png" alt="personnality" />
 			</a>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6" style="display:table-cell;vertical-align:middle;float:none;">
 			<a href="https://www.talentoday.com/users/guillaume-lefrant/personality" target="_blank" title="talentoday.com">
-				<img src="http://s3.amazonaws.com/talentoday_production/attachments/011/807/294/7be459b3202b7c0715e1a07458390f2242d4a283/medium." alt="talentoday.com" />
+				<img class="img-responsive" src="http://s3.amazonaws.com/talentoday_production/attachments/011/807/294/7be459b3202b7c0715e1a07458390f2242d4a283/medium." alt="talentoday.com" />
 			</a>
 		</div>
 	</div>
