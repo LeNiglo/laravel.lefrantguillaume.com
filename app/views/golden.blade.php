@@ -2,7 +2,7 @@
 
 @section('page')
 <div id="page" class="container clearfix">	
-	<div class="container"style=" padding: 20px; border-bottom: 1px solid #5bc0de;">
+	<div class="row" style=" padding: 20px; border-bottom: 1px solid #5bc0de;">
 		<div id="showForm">
 			<a class="btn btn-default col-xs-6 col-xs-offset-3">Write Mine</a>
 		</div>
@@ -64,10 +64,24 @@
 		</div>
 	</div>
 	<br /><br />
-	<div id="goldenBook" class="container"></div>
+	<div id="goldenBook" class="row"></div>
 	<script type="text/javascript">
 	refreshGB();
 	</script>
+	<div class="row text-center">
 	<small>{{{ DB::table('golden_book')->count() }}} record(s).</small>
+	</div>
+	<div class="row text-center">
+		<div class="col-md-6">
+			<a href="https://www.talentoday.com/users/guillaume-lefrant/personality" target="_blank" title="talentoday.com">
+				<img src="http://puu.sh/iDduc.png" alt="personnality" />
+			</a>
+		</div>
+		<div class="col-md-6">
+			<a href="https://www.talentoday.com/users/guillaume-lefrant/personality" target="_blank" title="talentoday.com">
+				<img src="http://s3.amazonaws.com/talentoday_production/attachments/011/807/294/7be459b3202b7c0715e1a07458390f2242d4a283/medium." alt="talentoday.com" />
+			</a>
+		</div>
+	</div>
 </div>
 @stop
