@@ -43,6 +43,10 @@ td div.progress {
 	margin: 10px;
 }
 
+th {
+	padding-left: 3px;
+}
+
 #footer {
 	padding: 10px;
 	margin: auto;
