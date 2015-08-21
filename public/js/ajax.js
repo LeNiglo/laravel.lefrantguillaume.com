@@ -1,6 +1,13 @@
 // On Document Ready : set ajax calls
 $(document).ready(function() {
 
+ $.ajaxPrefilter(function(options, originalOptions, xhr) {
+        var token = $('meta[name="csrf-token"]').attr('content');
+        if (token) {
+            return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+        }
+    });
+
 	// +1 for interactiv CV
 	$('a.thumbUp').click(function() {
 		var $clicked = $(this);
@@ -41,6 +48,7 @@ $(document).ready(function() {
 		$form.find('button').button('loading');
 		$.ajax({
 			type: "POST",
+			method: "POST",
 			url: "/ajax/send_mail",
 			dataType: "json",
 			data: $('#contactForm').serialize()
