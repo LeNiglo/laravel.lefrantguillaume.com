@@ -13,6 +13,9 @@ body {
 	display: inline-block;
 	border-bottom: 1px solid transparent;
 	text-decoration: none;
+	-webkit-transition : border 500ms ease-out;
+	-moz-transition : border 500ms ease-out;
+	-o-transition : border 500ms ease-out;
 }
 
 #header a:hover,
@@ -21,9 +24,13 @@ body {
 	display: inline-block;
 	text-decoration: none;
 	border-bottom: 1px solid #333;
-	background: rgba(0, 0, 0, 0.1);
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
+
+}
+
+#header a:active {
+	border-color: #111;
 }
 
 #header .dropdown-menu li a {
