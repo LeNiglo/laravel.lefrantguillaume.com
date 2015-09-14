@@ -7,6 +7,7 @@
 
 @section('page')
 <div id="page" class="container clearfix">
+	<div class="clearfix"></div>
 	<div class="panel panel-default">
 		<div class="panel-heading">Zappy</div>
 		<div class="panel-body">
@@ -127,11 +128,11 @@
 
 			<br />
 			<p style="font-size: 16px;">
-			Generating images with a computer is now common but who knows how it is done ? I can say I do !<br />
-			Our end of first year project was nothing more than to create a picture generator in C ! Awesome, right ?  :)<br />
-			I think it was one of the hardest project I had to face at Epitech. But look at the result ! How nice it is ? This is generated using only C and XML files !<br />
-			It was our first "huge group" project, with a team of 7 people per group. I did a huge amount of maths because this is a lot of calcul and advanced geometrical formulas.<br />
-			We did a nice technical job but failed hard during the demo ! Too bad ... we still got a 17 / 20 and a good commentary on the final visual.
+				Generating images with a computer is now common but who knows how it is done ? I can say I do !<br />
+				Our end of first year project was nothing more than to create a picture generator in C ! Awesome, right ?  :)<br />
+				I think it was one of the hardest project I had to face at Epitech. But look at the result ! How nice it is ? This is generated using only C and XML files !<br />
+				It was our first "huge group" project, with a team of 7 people per group. I did a huge amount of maths because this is a lot of calcul and advanced geometrical formulas.<br />
+				We did a nice technical job but failed hard during the demo ! Too bad ... we still got a 17 / 20 and a good commentary on the final visual.
 			</p>
 		</div>
 	</div>
