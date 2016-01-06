@@ -93,7 +93,7 @@
                         @foreach($experiences as $experience)
                             <tbody class="experience-hover" data-content="{!! $experience->commentary !!}"
                                    rel="popover"
-                                   data-placement="bottom"
+                                   data-placement="left"
                                    data-original-title="{{$experience->company}}  -  Rating [{{$experience->rating}}/5]"
                                    data-trigger="hover">
                             <tr class="{{$experience->bsClass()}}">
@@ -128,11 +128,11 @@
                     <h3><strong>Skills</strong></h3>
                 </div>
                 <div class="item-content">
-                    <table class="table table-hover table-responsive">
+                    <table class="table table-hover table-responsive" style="table-layout: fixed;">
                         <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Progress</th>
+                            <th class="col-xs-7 col-md-5">Name</th>
+                            <th class="col-xs-5 col-md-7">Progress</th>
                         </tr>
                         </thead>
                         <tbody>
