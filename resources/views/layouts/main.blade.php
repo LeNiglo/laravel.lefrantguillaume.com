@@ -1,42 +1,28 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>{{{ $pageName }}} | Lefrant Guillaume</title>
-	<meta name="csrf-token" content="{{ csrf_token() }}" />
-	<link rel="shortcut icon" href="{{{ asset('favicon.ico') }}}" type="image/x-icon" />
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/style.css">
-	<script src="/js/jquery-2.1.1.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/transit.min.js"></script>
-	<script src="/js/doc.js"></script>
-	<script src="/js/ajax.js"></script>
-	@yield('endhead')
+	<title>
+		@section('title')
+		Guillaume Lefrant
+		@show
+	</title>
+
+	@include('partials.favicon')
+
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/stylesheets/frontend.css') }}" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
 </head>
-<body class="text-center">
-	<div id="header">
-		<nav class="col-xs-12 navbar" role="navigation">
-			<ul class="list-inline">
-				<li><a href="/">Home</a></li>
-				<li><a href="{{{ URL::to('cv') }}}">Interactive CV</a></li>
-				<li><a href="{{{ URL::to('projects') }}}">Projects</a></li>
-				<li><a href="{{{ URL::to('contact') }}}">Contact</a></li>
-			</ul>
-		</nav>
-		<div class="page-header col-xs-12">
-			<h1 style='font-family: "Helvetica Neue", Helvetica, Verdana, sans-serif;font-weight: lighter; font-size: 50px;'>Lefrant Guillaume <small> &mdash; {{{ $pageName }}}</small></h1>
-		</div>
+<body>
+	@include('partials.header')
+
+	<div class="container-full">
+		@yield('content')
 	</div>
-	@yield('page')
-	<div id="footer" class="container">
-		<div class="pull-left">
-			@include('social-bar', array('height' => '24'))
-		</div>
-		<span class="col-xs-12 col-sm-12 col-md-4 text-right pull-right" style="line-height: 24px; font-family: LoLFont Arial sans-serif;">
-			__&nbsp;&nbsp;&nbsp;&nbsp;<em>Made by Guillaume LEFRANT.</em>&nbsp;&nbsp;&nbsp;&nbsp;__
-		</span>
-	</div>
+
+	@include('partials.footer')
+	<script type="text/javascript" src="{{ asset('assets/javascript/frontend.js') }}"></script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

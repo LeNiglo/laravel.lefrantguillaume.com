@@ -1,0 +1,140 @@
+@import 'base.less';
+//styles specific for the frontend
+@import "../../../bower_components/hover/less/hover.less";
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background: url("/assets/images/stardust.png");
+}
+
+header {
+  padding-top: 20px;
+  font-size: 18px;
+  margin: auto;
+  text-align: center;
+
+  a {
+    padding: 5px 20px;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    -webkit-transition: border 500ms ease-out;
+    -moz-transition: border 500ms ease-out;
+    -o-transition: border 500ms ease-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: lighten(#27c0db, 20%);
+      display: inline-block;
+      text-decoration: none;
+      border-bottom: 1px solid #ddd;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+    }
+
+  }
+}
+
+footer {
+  color: @gray-lighter;
+  border-top: 1px solid #333;
+  padding: 20px 5%;
+}
+
+label,
+legend {
+  color: @gray-darker;
+}
+
+form.formComplete * {
+  color: @brand-success;
+  border-color: @brand-success;
+}
+
+dd {
+  margin-left: 15px;
+}
+
+img.blue2green {
+  filter: hue-rotate(260deg);
+  -webkit-filter: hue-rotate(260deg);
+  -moz-filter: hue-rotate(260deg);
+  -o-filter: hue-rotate(260deg);
+  -ms-filter: hue-rotate(260deg);
+
+  &:hover {
+    filter: hue-rotate(20deg);
+    -webkit-filter: hue-rotate(20deg);
+    -moz-filter: hue-rotate(20deg);
+    -o-filter: hue-rotate(20deg);
+    -ms-filter: hue-rotate(20deg);
+  }
+}
+
+.item-box {
+  background-color: @gray-lighter;
+  display: table;
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0px;
+
+  .item-title {
+    display: table-cell;
+    width: 20%;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .item-content {
+    display: table-cell;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+table#work-exp tbody {
+
+  tr:nth-child(odd) {
+
+  }
+  tr:nth-child(even) {
+    td,
+    th {
+      border-bottom: 1px solid #333;
+    }
+  }
+
+}
+
+.tag {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: @brand-warning;
+  border: 1px solid darken(@brand-warning, 20%);
+  padding: 2px 5px;
+  margin-right: 10px;
+  color: white !important;
+
+  &:hover,
+  &:active {
+    background-color: darken(@brand-warning, 10%);
+    border: 1px solid darken(@brand-warning, 30%);
+    text-decoration: none;
+  }
+}
+
+.spacer {
+  display: block;
+  width: 100%;
+  height: 50px;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "lefrantguillaume.com",
+  "description": "This is my own website built with Laravel",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Guillaume Lefrant"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "http://lefrantguillaume.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "AdminLTE": "admin-lte#~2.3.2",
+    "bootstrap": "~3.3.5",
+    "hover": "Hover#~2.0.2"
+  }
+}

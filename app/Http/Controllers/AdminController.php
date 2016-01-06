@@ -1,111 +1,227 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace LefrantGuillaume\Http\Controllers;
 
-class AdminController extends Controller {
+use Illuminate\Http\Request;
+use LaravelAnalytics;
+use LefrantGuillaume\Email;
+use LefrantGuillaume\Experience;
+use LefrantGuillaume\Http\Requests;
+use LefrantGuillaume\Skill;
+use LefrantGuillaume\Study;
+use LefrantGuillaume\User;
 
-	public function index($action, $id) {
-		return View::make('admin.index');
-	}
+class AdminController extends Controller
+{
 
-	public function contacts($action, $id) {
-		if ($action === 'show') {
-			return View::make('admin.contacts');
-		} else if ($action === 'remove') {
-			if (Request::ajax()) {
-				return json_encode(array('success' => DB::table('contacts')
-					->where('id', '=', $id)
-					->delete()));
-			} else {
-				return json_encode(array('success' => false));
-			}
-		} else if ($action === 'update') {
-			if (Request::ajax()) {
-				return json_encode(array('success' => DB::table('contacts')
-					->where('id', '=', $id)
-					->update(array('name' => Input::get('name'),
-						'email' => Input::get('email'),
-						'color' => Input::get('color')))));
-			} else {
-				return json_encode(array('success' => false));
-			}
-		} else if ($action === 'create') {
-			if (Request::ajax()) {
-				return json_encode(array('success' => DB::table('contacts')
-					->insert(array('name' => Input::get('name'),
-						'email' => Input::get('email')))));
-			} else {
-				return json_encode(array('success' => false));
-			}
-		} else {
-			return false;
-		}
-	}
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->data['me'] = User::first();
+        $this->data['users'] = User::all();
+        $this->data['emailCount'] = Email::count();
+        $this->data['emails'] = Email::orderBy('updated_at', 'DESC')->limit(5)->get();
+    }
 
-	public function check_out($action, $id) {
-		if ($action === 'show') {
-			return View::make('admin.check_out');
-		} else if ($action === 'remove') {
-			if (Request::ajax()) {
-				return json_encode(array('success' => DB::table('check_out')
-					->where('id', '=', $id)
-					->delete()));
-			} else {
-				return json_encode(array('success' => false));
-			}
-		} else if ($action === 'update') {
-			if (Request::ajax()) {
-				return json_encode(array('success' => DB::table('check_out')
-					->where('id', '=', $id)
-					->update(array('title' => Input::get('title'),
-						'html' => Input::get('html')))));
-			} else {
-				return json_encode(array('success' => false));
-			}
-		} else if ($action === 'create') {
-			if (Request::ajax()) {
-				return json_encode(array('success' => DB::table('check_out')
-					->insert(array('title' => Input::get('title'),
-						'html' => Input::get('content'),
-						'contact_id' => Input::get('contact')))));
-			} else {
-				return json_encode(array('success' => false));
-			}
-		} else {
-			return false;
-		}
-	}
+    public function dashboard()
+    {
 
-	public function golden_book($action, $id) {
-		return View::make('admin.golden_book');
-	}
+        try {
+            $this->data['analytics']["visitors"] = LaravelAnalytics::getVisitorsAndPageViews(30);
+            $this->data['analytics']["pages"] = LaravelAnalytics::getMostVisitedPages(30, 5);
+        } catch (Exception $e) {
+            $this->data['analytics'] = null;
+        }
 
-	public function exp_skls($action, $id) {
-		return View::make('admin.exp_skls');
-	}
+        return view('admin.dashboard')->with($this->data);
+    }
 
-	public function showLogin() {
-		return View::make('admin.login');
-	}
+    public function details()
+    {
+        return view('admin.details')->with($this->data);
+    }
 
-	public function doLogin() {
-		$userdata = array(
-			'name' 		=> Input::get('username'),
-			'password' 	=> Input::get('password'));
-		$auth = DB::table('users')->where('name', '=', $userdata['name'])->first();
-		if (!$auth)
-			return Redirect::to('login')->with('msg', 'Login Failed : Username does not match.');
-		if (Crypt::decrypt($auth->password) === $userdata['password']) {
-			Session::put('user', $auth);
-			return Redirect::to('admin');
-		} else {
-			return Redirect::to('login')->with('msg', 'Login Failed : Bad User/Password combination');
-		}
-	}
+    public function studies()
+    {
+        $this->data['studies'] = Study::all();
+        return view('admin.studies')->with($this->data);
+    }
 
-	public function doLogout() {
-		Session::forget('user');
-		return Redirect::to('login')->with('msg', 'Logged Out.');
-	}
+    public function skills()
+    {
+        $this->data['skills'] = Skill::all();
+        return view('admin.skills')->with($this->data);
+    }
+
+    public function experiences()
+    {
+        $this->data['skills'] = Skill::all();
+        $this->data['experiences'] = Experience::all();
+
+        return view('admin.experiences')->with($this->data);
+    }
+
+    public function mails()
+    {
+        $this->data['emails'] = Email::orderBy('updated_at', 'DESC')->simplePaginate(20);
+        return view('admin.mails')->with($this->data);
+    }
+
+    public function mail($id)
+    {
+        $this->data['email'] = Email::where("id", "=", $id)->firstOrFail();
+        return view('admin.mail')->with($this->data);
+    }
+
+    /*
+     * POST routes for utilies
+     */
+
+    public function changeEmail(Request $request)
+    {
+        if ($request->has('phone')) {
+            $this->me->email2 = $request->input('email2');
+            $this->me->phone = $request->input('phone');
+            $this->me->save();
+            return redirect()->route('admin::details')->with('status', 'Email updated!');
+        } else {
+            return redirect()->route('admin::details')->with('error', 'Phone is required.');
+        }
+    }
+
+    public function changePassword(Request $request)
+    {
+        if ($request->has(['old', 'new', 'new2']) && $request->input('new') == $request->input('new2')) {
+
+            if ($this->me->changePassword($request->input('old'), $request->input('new')))
+                return redirect()->route('admin::details')->with('status', 'Password Changed!');
+            else
+                return redirect()->route('admin::details')->with('error', 'Incorrect old Password!')->withInput();
+        } else {
+            return redirect()->route('admin::details')->with('error', 'Password didn\'t match!')->withInput();
+        }
+    }
+
+    public function changeAddress(Request $request)
+    {
+        if ($request->has('addr1')) {
+
+            $this->me->addr1 = $request->input('addr1');
+            $this->me->addr2 = $request->input('addr2');
+            $this->me->addr3 = $request->input('addr3');
+            $this->me->save();
+
+            return redirect()->route('admin::details')->with('status', 'Address updated!');
+        } else {
+            return redirect()->route('admin::details')->with('error', 'Line 1 is required')->withInput();
+        }
+    }
+
+    public function manageStudy(Request $request)
+    {
+        if ($request->has(['year', 'school', 'title'])) {
+            if ($request->has('id')) {
+                $id = $request->input('id');
+
+                $study = Study::where('id', '=', $id)->firstOrFail();
+                $study->year = $request->year;
+                $study->school = $request->school;
+                $study->title = $request->title;
+                $study->save();
+                return redirect()->route('admin::studies')->with('status', 'Study updated!');
+            } else {
+                $study = Study::firstOrNew([
+                    "year" => $request->year,
+                    "school" => $request->school,
+                    "title" => $request->title
+                ]);
+                $study->save();
+                return redirect()->route('admin::studies')->with('status', 'Study created!');
+            }
+        } elseif ($request->has(['delete', 'id'])) {
+            return response()->json(['res' => Study::where('id', '=', $request->input('id'))->delete()]);
+        } else {
+            return redirect()->route('admin::studies')->with('error', 'Missing parameter')->withInput();
+        }
+
+    }
+
+    public function manageSkill(Request $request)
+    {
+        if ($request->has(['name', 'progress'])) {
+            if ($request->has('id')) {
+                $id = $request->input('id');
+
+                $skill = Skill::where('id', '=', $id)->firstOrFail();
+                $skill->name = $request->name;
+                $skill->progress = $request->progress;
+                $skill->save();
+                return redirect()->route('admin::skills')->with('status', 'Skill updated!');
+            } else {
+                $skill = Skill::firstOrNew([
+                    "name" => $request->name,
+                    "progress" => $request->progress
+                ]);
+                $skill->save();
+                return redirect()->route('admin::skills')->with('status', 'Study created!');
+            }
+        } elseif ($request->has(['delete', 'id'])) {
+            Skill::where('id', '=', $request->input('id'))->first()->experiences()->detach();
+            return response()->json(['res' => Skill::where('id', '=', $request->input('id'))->delete()]);
+        } else {
+            return redirect()->route('admin::skills')->with('error', 'Missing parameter')->withInput();
+        }
+
+    }
+
+    public function manageExperience(Request $request)
+    {
+        if ($request->has(['begin_date', 'end_date', 'company', 'subject', 'rating'])) {
+            if ($request->has('id')) {
+                $id = $request->input('id');
+
+                $experience = Experience::where('id', '=', $id)->firstOrFail();
+                $experience->begin_date = $request->begin_date;
+                $experience->end_date = $request->end_date;
+                $experience->company = $request->company;
+                $experience->subject = $request->subject;
+                $experience->rating = $request->rating;
+                $experience->commentary = $request->has('commentary') ? $request->commentary : "";
+                $experience->save();
+
+                $skillIds = explode(",", $request->skills);
+                foreach ($skillIds as $id) {
+                    if ($experience->skills()->where('id', '=', $id)->first() == null)
+                        $experience->skills()->save(Skill::where('id', '=', $id)->first());
+                }
+
+                return redirect()->route('admin::experiences')->with('status', 'Working Experience updated!');
+            } else {
+                $experience = Experience::firstOrNew([
+                    "begin_date" => $request->begin_date,
+                    "end_date" => $request->end_date,
+                    "company" => $request->company,
+                    "subject" => $request->subject,
+                    "rating" => $request->rating,
+                    "commentary" => $request->commentary
+                ]);
+                $experience->save();
+
+                $skillIds = explode(",", $request->skills);
+                foreach ($skillIds as $id) {
+                    if ($experience->skills()->where('id', '=', $id)->first() == null)
+                        $experience->skills()->save(Skill::where('id', '=', $id)->first());
+                }
+
+                return redirect()->route('admin::experiences')->with('status', 'Working Experience created!');
+            }
+        } elseif ($request->has(['delete', 'id'])) {
+            Experience::where('id', '=', $request->input('id'))->first()->skills()->detach();
+            return response()->json(['res' => Experience::where('id', '=', $request->input('id'))->delete()]);
+        } else {
+            return redirect()->route('admin::experiences')->with('error', 'Missing parameter')->withInput();
+        }
+
+    }
 
 }

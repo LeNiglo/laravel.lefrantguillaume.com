@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace LefrantGuillaume\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use LefrantGuillaume\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller
@@ -19,6 +19,7 @@ class PasswordController extends Controller
     */
 
     use ResetsPasswords;
+    protected $redirectTo = '/auth/login';
 
     /**
      * Create a new password controller instance.

@@ -1,48 +1,65 @@
-<?php
-function admin_nav_link($link, $name) {
-	echo '<a href="'.URL::to($link).'"';
-	if (Request::path() == $link)
-		echo ' class="active"';
-	echo '>'.$name.'</a>';
-}
-?>
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Admin</title>
-	<link rel="shortcut icon" href="{{{ asset('favicon.ico') }}}" type="image/x-icon" />
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
-	<script src="/js/jquery-2.1.1.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/transit.min.js"></script>
-	<script src="/js/admin.js"></script>
-</head>
-<body class="text-center" style="padding-top: 70px;">
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="{{ URL::to('admin') }}">Admin Panel</a>
-				<a class="navbar-brand glyphicon glyphicon-off" href="{{ URL::to('logout') }}"></a>
-				<a class="navbar-brand glyphicon glyphicon-home" href="{{ URL::to('/') }}"></a>
-			</div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin | Guillaume Lefrant</title>
+    @include('partials.favicon')
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><?php admin_nav_link('admin/contacts', 'Contacts'); ?></li>
-					<li><?php admin_nav_link('admin/check_out', 'Check Out'); ?></li>
-					<li><?php admin_nav_link('admin/golden_book', 'Golden Book'); ?></li>
-					<li><?php admin_nav_link('admin/exp_skls', 'Experiences & Skills'); ?></li>
-				</ul>
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
-	</nav>
-	@yield('page')
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/stylesheets/backend.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/stylesheets/select2.min.css')}}"/>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('assets/stylesheets/AdminLTE.min.css') }}"/>
+
+    <link rel="stylesheet" href="{{ asset('assets/stylesheets/skins/skin-black.min.css') }}"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-black sidebar-mini <?php echo Auth::check() ? '' : 'sidebar-collapse'; ?>">
+<div class="wrapper">
+    @include('partials.admin-header')
+            <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        @yield('header')
+                <!-- Main content -->
+        <section class="content">
+            @if (session('status'))
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ session('status') }}
+                </div>
+            @endif
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ session('error') }}
+                </div>
+            @endif
+
+            @yield('content')
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    @include('partials.admin-footer')
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+<script type="text/javascript" src="{{ asset('assets/javascript/backend.js') }}"></script>
 </body>
 </html>

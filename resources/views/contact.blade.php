@@ -1,58 +1,78 @@
 @extends('layouts.main')
 
-@section('page')
-<?php
+@section('title')
+    Contact - @parent
+@endsection
 
-$contacts = DB::table('contacts')->orderBy('contacted', 'desc')->get();
+@section('content')
 
-function print_option($contact, $input) {
-	$selected = false;
-	if ($input == $contact->id)
-		$selected = true;
+    <div class="container">
+        <div class="row">
+            <div class="item-box">
+                <div class="item-content">
+                    <form id="sendmail" role="form">
+                        <legend style="padding-left: 15px;">Thank you for your interest. Please, fill the form.</legend>
 
-	return '<option value=\''.json_encode(array('name' => $contact->name, 'email' => $contact->email)).'\' style="color: '.$contact->color.';"'.($selected ? ' selected' : '').'>'.$contact->name.'</option>';
-};
+                        {!! csrf_field() !!}
 
-?>
-<div id="page" class="container clearfix">
-	<div class="row">
-		<form class="form col-xs-12 col-md-6" id="contactForm">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<fieldset>
-				<legend>Please, Fill the form.</legend>
-				<div class="form-group col-xs-12">
-					<label for="to">To : </label>
-					<select class="form-control" id="to" name="to">
-						@foreach($contacts as $contact)
-						{!! print_option($contact, Input::get('to')) !!}
-						@endforeach
-					</select>
-				</div>
-				<div class="form-group col-xs-6">
-					<label for="from">From : </label>
-					<input type="text" class="form-control" id="from" name="from" placeholder="From" />
-				</div>
-				<div class="form-group col-xs-6">
-					<label for="email">eMail : </label>
-					<input type="email" class="form-control" id="email" name="email" placeholder="eMail" />
-				</div>
-				<div class="form-group col-xs-12">
-					<label for="subject">Subject : </label>
-					<input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" />
-				</div>
-				<div class="form-group col-xs-12">
-					<label for="body">Message : </label>
-					<textarea type="text" class="form-control" style="resize: vertical;" rows="6" id="body" name="body" placeholder="Message ..."></textarea>
-				</div>
-				<button type="submit" class="btn btn-info" data-loading-text="Sending ..." data-complete-text="Sent !">Send Mail</button>
-			</fieldset>
-		</form>
-		<div class="col-md-6 hidden-xs hidden-sm">
-			<img id="send_mail_icon" class="img-responsive" src="/img/icons/send_mail.png" alt="contact me" />
-		</div>
-	</div>
-	<div class="row">
-		<small>Already used {{{ DB::table('contacts')->sum('contacted') }}} times.</small>
-	</div>
-</div>
-@stop
+                        <div class="col-sm-12 col-md-8">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="from" class="control-label">From</label>
+                                        <input type="text" name="from" id="from" class="form-control"
+                                               required="required"
+                                               placeholder="You" value="{{old('from')}}"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email" class="control-label">Email</label>
+                                        <input type="email" name="email" id="email" class="form-control"
+                                               required="required"
+                                               placeholder="you@gmail.com" value="{{old('email')}}"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="control-label">Subject</label>
+                                <input type="text" name="subject" id="subject" class="form-control" required="required"
+                                       placeholder="Job Proposal" value="{{old('subject')}}"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="body" class="control-label">Body</label>
+                            <textarea name="body" id="body" class="form-control" rows="6" required="required"
+                                      placeholder="Hello Guillaume...">{{old('body')}}</textarea>
+                            </div>
+
+                            <p class="text-center">
+                                <button type="submit" class="btn btn-lg btn-primary">Send</button>
+                            </p>
+
+                        </div>
+                        <div class="hidden-xs hidden-sm col-md-4">
+                            <div class="spacer"></div>
+                            <div class="row text-center">
+                                <div class='fln-hireme' data-username='LeNiglo' data-style='plain_footer'
+                                     data-type='badge'
+                                     data-bg='#eee' data-theme=''></div>
+                                <script type='text/javascript'>
+                                    (function (d) {
+                                        var po = d.createElement('script');
+                                        po.type = 'text/javascript';
+                                        po.async = true;
+                                        po.src = '//static.flnwdgt.com/build/js/hireme-sdk.js';
+                                        var s = d.getElementsByTagName('script')[0];
+                                        s.parentNode.insertBefore(po, s);
+                                    })(document);
+                                </script>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
+
