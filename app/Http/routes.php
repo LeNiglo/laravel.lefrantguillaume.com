@@ -31,7 +31,9 @@ if (env('APP_ENV') == 'local') {
     Route::get('auth/register', 'Auth\AuthController@getRegister')->name('register');
     Route::post('auth/register', 'Auth\AuthController@postRegister');
 } else {
-    Route::any('/auth/register', 'SiteController@home')->name('register');
+    Route::any('/auth/register', function () {
+        return redirect()->route('home');
+    })->name('register');
 }
 
 // Password reset link request routes...
