@@ -189,8 +189,7 @@ class AdminController extends Controller
                 $experience->commentary = $request->has('commentary') ? $request->commentary : "";
                 $experience->save();
 
-                $skillIds = explode(",", $request->skills);
-                foreach ($skillIds as $id) {
+                foreach ($request->skills as $id) {
                     if ($experience->skills()->where('id', '=', $id)->first() == null)
                         $experience->skills()->save(Skill::where('id', '=', $id)->first());
                 }
@@ -207,8 +206,7 @@ class AdminController extends Controller
                 ]);
                 $experience->save();
 
-                $skillIds = explode(",", $request->skills);
-                foreach ($skillIds as $id) {
+                foreach ($request->skills as $id) {
                     if ($experience->skills()->where('id', '=', $id)->first() == null)
                         $experience->skills()->save(Skill::where('id', '=', $id)->first());
                 }

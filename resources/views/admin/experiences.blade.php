@@ -41,8 +41,8 @@
                                     @endforeach
                                 </td>
                                 <td data-commentary="{{$experience->commentary}}"
-                                    data-begin-date="{{$experience->begin_date}}"
-                                    data-end-date="{{$experience->end_date}}">
+                                    data-begin-date="{{$experience->begin_date->format('Y-m-d')}}"
+                                    data-end-date="{{$experience->end_date->format('Y-m-d')}}">
                                     <a href="#" class="update-experience" data-id="{{$experience->id}}" title="Edit">
                                         <i class="fa fa-pencil text-olive"></i>
                                     </a>
@@ -126,8 +126,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="skills">Skills</label>
-                                    <select name="skills" id="skills" class="form-control select2" multiple="multiple"
+                                    <label for="skills[]">Skills</label>
+                                    <select name="skills[]" id="skills[]" class="form-control select2" multiple="multiple"
                                             data-tags="true" data-placeholder="Select relevant skills"
                                             data-allow-clear="true">
                                         <option value=""></option>

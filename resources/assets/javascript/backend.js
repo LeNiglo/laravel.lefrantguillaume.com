@@ -126,7 +126,7 @@ $(document).ready(function () {
         $tr.find('td.skills').find('span').each(function () {
             skillIds.push($(this).data('id'));
         });
-        $form.find('select.select2[name="skills"]').val(skillIds).select2();
+        $form.find('select.select2[name="skills[]"]').val(skillIds).select2();
 
         var rating = $tr.find('td.rating').text();
         $form.find('input[name="rating"]').each(function () {
