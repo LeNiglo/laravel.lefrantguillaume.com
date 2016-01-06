@@ -80,9 +80,9 @@ class AdminController extends Controller
     public function changeEmail(Request $request)
     {
         if ($request->has('phone')) {
-            $this->me->email2 = $request->input('email2');
-            $this->me->phone = $request->input('phone');
-            $this->me->save();
+            $this->data['me']->email2 = $request->input('email2');
+            $this->data['me']->phone = $request->input('phone');
+            $this->data['me']->save();
             return redirect()->route('admin::details')->with('status', 'Email updated!');
         } else {
             return redirect()->route('admin::details')->with('error', 'Phone is required.');
@@ -106,10 +106,10 @@ class AdminController extends Controller
     {
         if ($request->has('addr1')) {
 
-            $this->me->addr1 = $request->input('addr1');
-            $this->me->addr2 = $request->input('addr2');
-            $this->me->addr3 = $request->input('addr3');
-            $this->me->save();
+            $this->data['me']->addr1 = $request->input('addr1');
+            $this->data['me']->addr2 = $request->input('addr2');
+            $this->data['me']->addr3 = $request->input('addr3');
+            $this->data['me']->save();
 
             return redirect()->route('admin::details')->with('status', 'Address updated!');
         } else {
