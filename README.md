@@ -1,3 +1,3 @@
 # My own website
 
-http://lefrantguillaume.com
+http://www.lefrantguillaume.com?ref=github
