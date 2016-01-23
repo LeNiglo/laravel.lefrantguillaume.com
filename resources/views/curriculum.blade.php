@@ -93,7 +93,6 @@
                         @foreach($experiences as $experience)
                             <tbody class="experience-hover" data-content="{!! $experience->commentary !!}"
                                    rel="popover"
-                                   data-placement="left"
                                    data-original-title="{{$experience->company}}  -  Rating [{{$experience->rating}}/5]"
                                    data-trigger="hover">
                             <tr class="{{$experience->bsClass()}}">
@@ -142,8 +141,11 @@
                                 <td>
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-{{$skill->bsClass()}}" role="progressbar"
-                                             aria-valuenow="{{$skill->progress}}" aria-valuemin="0" aria-valuemax="100"
-                                             style="{{'width:'.$skill->progress}}%"></div>
+                                             aria-valuenow="{{$skill->progress}}" title="{{$skill->progress}} %"
+                                             aria-valuemin="0" aria-valuemax="100"
+                                             style="{{'min-width: 2em;width:'.$skill->progress}}%">
+                                            {{$skill->progress}}%
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
