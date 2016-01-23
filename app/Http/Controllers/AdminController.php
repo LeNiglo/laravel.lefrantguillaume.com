@@ -28,7 +28,7 @@ class AdminController extends Controller
 
         try {
             $this->data['analytics']["visitors"] = LaravelAnalytics::getVisitorsAndPageViews(30);
-            $this->data['analytics']["pages"] = LaravelAnalytics::getMostVisitedPages(30, 5);
+            $this->data['analytics']["pages"] = LaravelAnalytics::getMostVisitedPages(30, 10);
         } catch (Exception $e) {
             $this->data['analytics'] = null;
         }
