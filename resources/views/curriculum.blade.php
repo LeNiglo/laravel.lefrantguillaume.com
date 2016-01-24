@@ -11,7 +11,7 @@
             <!-- .item-box Details -->
             <div class="item-box">
                 <div class="item-title">
-                    <h3><i class="fa fa-info"></i></h3>
+                    <p class="icon"><i class="fa fa-info"></i></p>
 
                     <h3><strong>Details</strong></h3>
                 </div>
@@ -31,10 +31,11 @@
                                 <abbr title="Phone Number">N°</abbr>: <a
                                         href="tel:{{$me->phone}}">{{$me->phone}}</a><br/>
                                 <abbr title="eMail Address">eMail</abbr>: <a
-                                        href="mailto:{{$me->name}}%20<{{$me->email}}>">{{$me->email}}</a><br/>
+                                        href="mailto:{{rawurlencode($me->name.' <'.$me->email.'>')}}">{{$me->email}}</a><br/>
                                 @if (isset($me->email2))
                                     <abbr title="eMail Address">eMail</abbr>: <a
-                                            href="mailto:{{$me->name}}%20<{{$me->email2}}>">{{$me->email2}}</a><br/>
+                                            href="mailto:{{rawurlencode($me->name.' <'.$me->email2.'>')}}">{{$me->email2}}</a>
+                                    <br/>
                                 @endif
                             </div>
                             <div class="col-md-6">
@@ -58,7 +59,7 @@
             <!-- .item-box Studies -->
             <div class="item-box">
                 <div class="item-title">
-                    <h3><i class="fa fa-graduation-cap"></i></h3>
+                    <p class="icon"><i class="fa fa-graduation-cap"></i></p>
 
                     <h3><strong>Studies</strong></h3>
                 </div>
@@ -77,7 +78,7 @@
             <!-- .item-box Experiences -->
             <div class="item-box">
                 <div class="item-title">
-                    <h3><i class="fa fa-building"></i></h3>
+                    <p class="icon"><i class="fa fa-building"></i></p>
 
                     <h3><strong>Working Experiences</strong></h3>
                 </div>
@@ -122,7 +123,7 @@
             <!-- .item-box Skills -->
             <div class="item-box">
                 <div class="item-title">
-                    <h3><i class="fa fa-code"></i></h3>
+                    <p class="icon"><i class="fa fa-code"></i></p>
 
                     <h3><strong>Skills</strong></h3>
                 </div>

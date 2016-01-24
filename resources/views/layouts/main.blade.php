@@ -3,9 +3,10 @@
 <head>
 	<title>
 		@section('title')
-		Guillaume Lefrant
+		Lefrant Guillaume
 		@show
 	</title>
+	<meta charset="utf-8" />
 
 	@include('partials.favicon')
 
