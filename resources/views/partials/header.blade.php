@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar" role="navigation">
+    <nav class="navbar">
         <ul class="list-inline">
             <li><a href="{{ route('home') }}" class="hvr-underline-from-center">Home</a></li>
             <li><a href="{{ route('cv') }}" class="hvr-underline-from-center">Curriculum</a></li>

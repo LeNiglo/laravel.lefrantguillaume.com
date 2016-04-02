@@ -107,7 +107,7 @@
                                 <td>{{$experience->end_date->format('M j Y')}}</td>
                                 <td colspan="2">
                                     @foreach($experience->skills as $skill)
-                                        <a class="tag goto" href="#skill-{{$skill->id}}">{{$skill->name}}</a>
+                                        <a class="tag goto progress-bar-{{$skill->bsClass()}}" href="#skill-{{$skill->id}}">{{$skill->name}}</a>
                                     @endforeach
                                 </td>
                             </tr>

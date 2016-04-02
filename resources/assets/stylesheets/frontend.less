@@ -114,17 +114,18 @@ img.blue2green {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  background-color: @brand-warning;
-  border: 1px solid darken(@brand-warning, 20%);
+  border: 1px solid #333;
   padding: 2px 5px;
   margin-right: 10px;
   color: white !important;
   text-decoration: none;
 
   &:hover,
-  &:active {
-    background-color: darken(@brand-warning, 10%);
-    border: 1px solid darken(@brand-warning, 30%);
+  &:focus,
+  &:active, {
+    border: 1px solid #101010;
+    text-decoration: none;
+    box-shadow: 1px 1px #101010;
   }
 }
 

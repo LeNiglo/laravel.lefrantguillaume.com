@@ -127,7 +127,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="skills[]">Skills</label>
-                                    <select name="skills[]" id="skills[]" class="form-control select2" multiple="multiple"
+                                    <select name="skills[]" id="skills[]" class="form-control select2"
+                                            multiple="multiple"
                                             data-tags="true" data-placeholder="Select relevant skills"
                                             data-allow-clear="true">
                                         <option value=""></option>

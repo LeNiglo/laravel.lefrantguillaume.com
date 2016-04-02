@@ -189,6 +189,12 @@ class AdminController extends Controller
                 $experience->commentary = $request->has('commentary') ? $request->commentary : "";
                 $experience->save();
 
+                foreach ($experience->skills()->get() as $oldSkill) {
+                    if (!in_array($oldSkill->id, $request->skills)) {
+                        $experience->skills()->detach($oldSkill->id);
+                    }
+                }
+
                 foreach ($request->skills as $id) {
                     if ($experience->skills()->where('id', '=', $id)->first() == null)
                         $experience->skills()->save(Skill::where('id', '=', $id)->first());
