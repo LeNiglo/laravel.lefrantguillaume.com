@@ -62,3 +62,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'as' => 'admin::'], f
         Route::post('manage-experience', "AdminController@manageExperience")->name('manageExperience');
     });
 });
+
+// Picture proxying over https
+Route::get('tools/picture-proxying', "ToolsController@pictureProxying");
