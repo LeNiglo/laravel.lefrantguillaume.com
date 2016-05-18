@@ -94,7 +94,7 @@
         <div class="links">
             <ul>
                 <li><a class="hvr-outline-in" href="{{ route('cv') }}">Curriculum</a></li>
-                <li><a class="hvr-outline-in" href="{{ route('cv') }}">Contact</a></li>
+                <li><a class="hvr-outline-in" href="{{ route('contact') }}">Contact</a></li>
             </ul>
         </div>
         <div style="margin: 20px auto; width: 400px;">
