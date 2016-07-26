@@ -13,9 +13,11 @@ class ToolsController extends Controller
 			if ($imginfo) {
 				header("Content-type: " . $imginfo['mime']);
 				return readfile($request->get('img'));
+			} else {
+				abort(404);
 			}
+		} else {
+			abort(401);
 		}
-		header("Content-type: image/jpeg");
-		return '';
 	}
 }
